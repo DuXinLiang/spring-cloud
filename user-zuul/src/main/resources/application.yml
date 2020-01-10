@@ -1,0 +1,13 @@
+server:
+  port: 10010
+spring:
+  application:
+    name: user-zuul
+zuul:
+  routes:  # 配置路由规则
+    user-service:
+      path: /user-service/**  # 映射路径，给用户输入用的
+      # url: http://127.0.0.1:8081  # 转发路径，实际跳转路径
+      serviceId: user-service
+    # user-consumer: /user-consumer/**
+  prefix: /api  # 路由前缀

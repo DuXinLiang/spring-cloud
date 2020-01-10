@@ -1,0 +1,17 @@
+server:
+  port: 8081
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/myjpa?characterEncoding=utf8&useSSL=false&serverTimezone=UTC&rewriteBatchedStatements=true
+    username: root
+    password: root
+  application:
+    name: user-service
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8761/eureka/  # 注册到eureka-server注册中心
+  instance:
+    prefer-ip-address: true  # 调用getHostName时返回的是IP，而不是host名称
+    ip-address: 127.0.0.1  # 指定自己的ip地址，否则就会自动找
