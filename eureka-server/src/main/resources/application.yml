@@ -1,0 +1,11 @@
+server:
+  port: 8762
+spring:
+  application:
+    name: eureka-server
+eureka:
+  client:
+    register-with-eureka: true  # 是否把自己注册到eureka-server中，默认是true
+    fetch-registry: true  # 是否拉取服务中心的信息，默认是true
+    service-url:
+      defaultZone: http://127.0.0.1:8761/eureka/, http://127.0.0.1:8762/eureka/
